@@ -12,6 +12,6 @@ class Profile extends Model
     'name' => 'required',
     'gender' => 'required',
     'hobby' => 'required',
-    'intro' => 'required',
+    'introduction' => 'required',
   );
 }

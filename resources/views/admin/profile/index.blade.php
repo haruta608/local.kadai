@@ -15,7 +15,7 @@
           <div class="form-group row">
             <label class="col-md-2">氏名</label>
             <div class="col-md-8">
-              <input type="text" class="form-control" name="cond_name" value={{ $cond_name }}>
+              <input type="text" class="form-control" name="cond_name" value="{{ $cond_name }}">
             </div>
             <div class="col-md-2">
               {{ csrf_field() }}
@@ -33,7 +33,8 @@
               <tr>
                 <th width="10%">ID</th>
                 <th width="20%">氏名</th>
-                <th width="50%">本文</th>
+                <th width="30%">趣味</th>
+                <th width="30%">自己紹介</th>
                 <th width="10%">操作</th>
               </tr>
             </thead>
@@ -43,10 +44,13 @@
                   <th>{{ $profile->id }}</th>
                   <td>{{ str_limit($profile->name, 50) }}</td>
                   <td>{{ str_limit($profile->hobby, 200) }}</td>
-                  <td>{{ str_limit($profile->intro, 200) }}</td>
+                  <td>{{ str_limit($profile->introduction, 200) }}</td>
                   <td>
                     <div>
                       <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id])}}">編集</a>
+                    </div>
+                    <div>
+                      <a href="{{ action('Admin\ProfileController@delete', ['id' => $profile->id]) }}">削除</a>
                     </div>
                   </td>
                 </tr>

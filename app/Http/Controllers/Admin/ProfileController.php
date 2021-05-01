@@ -30,13 +30,13 @@ class ProfileController extends Controller
 
     public function index(Request $request)
     {
-      $cond_title = $request->cond_title;
-      if ($cond_title != '') {
-        $posts = Profile::where('title', $cond_title)->get();
+      $cond_name = $request->cond_name;
+      if ($cond_name != '') {
+        $posts = Profile::where('title', $cond_name)->get();
       } else {
         $posts = Profile::all();
       }
-      return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+      return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
     }
 
     public function edit(Request $request)
@@ -55,5 +55,12 @@ class ProfileController extends Controller
       unset($profile_form['_token']);
       $profile->fill($profile_form)->save();
       return redirect('admin/profile');
+    }
+
+    public function delete(Request $request)
+    {
+      $profile = Profile::find($request->id);
+      $profile->delete();
+      return redirect('admin/profile/');
     }
 }

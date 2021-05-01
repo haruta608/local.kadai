@@ -34,9 +34,9 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-md-2" for="intro">自己紹介欄</label>
+            <label class="col-md-2" for="introduction">自己紹介欄</label>
             <div class="col-md-10">
-              <textarea class="form-control" name="intro" rows="10">{{ old('intro') }}</textarea>
+              <textarea class="form-control" name="introduction" rows="10">{{ old('introduction') }}</textarea>
             </div>
           </div>
           <div class="form-group row">
