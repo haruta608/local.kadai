@@ -16,6 +16,6 @@ class Profile extends Model
   );
   public function records()
   {
-    return $this->hasMany('App\History');
+    return $this->hasMany('App\Record');
   }
 }
