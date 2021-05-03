@@ -34,8 +34,7 @@
               </div>
               <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="remove" value="true">
-                    画像を削除
+                    <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
                 </label>
               </div>
             </div>
@@ -55,7 +54,7 @@
                 @foreach ($news_form->histories as $history)
                   <li class="list-group-item">{{ $history->edited_at }}</li>
                 @endforeach
-              @endif    
+              @endif
             </ul>
           </div>
         </div>
